@@ -1,0 +1,28 @@
+.gallery {
+	@include section-gap;
+	padding: 0 $side-padding;
+	width: 100%;
+	box-sizing: border-box;
+
+	&__title {
+		@include section-title(uppercase);
+		margin: 0;
+	}
+	&__title::after {
+		@include title-line;
+	}
+
+	&__photos {
+		width: 1100px;
+		margin: 0 auto;
+	}
+	&__photos::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	&__photo {
+		float: left;
+	}
+}
+

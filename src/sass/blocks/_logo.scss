@@ -1,0 +1,14 @@
+.logo {
+	font-family: $decor-font;
+	font-size: 40pt;
+	line-height: 60pt;
+
+	&__points {
+		color: $accent-color;
+	} 
+	&__text {
+		margin: 0;
+		display: inline-block;
+		font-size: inherit;
+	}
+}

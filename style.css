@@ -28,19 +28,15 @@
 html {
 	height: 100%;
 	width: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: auto;
 }
 body {
+	box-sizing: border-box;
 	font-family: "aleoregular", serif;
 	font-size: 16px;
 	line-height: 30px;
 	color: #3b3b3b;
 	width: 100%; 
-	margin: 0;
 	padding: 0;
-	overflow: auto;
 }
 .layout {
 	width: 100%;
@@ -85,6 +81,7 @@ body {
 }
 .logo__text_dark {
 	color: #3a3a3a;
+	display: inline-block;
 }
 .logo__text_light {
 	color: #ffffff;
@@ -159,31 +156,33 @@ body {
 	background-color: white;
 	z-index: 2;
 }
-.the-menu__row {
-	height: 95px;
-	vertical-align: top;
-}
+
 .the-menu__table {
-	border-collapse: collapse;
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	width: 100%;
+	box-sizing: border-box;
 }
-.the-menu__table_layout {
+.the-menu__item {
+	box-sizing: border-box;
+	flex-grow: 0;
+	width: 50%;
+	display: flex;
+	padding: 2% 2%;
+	transition: all, 0.5s;
+}
+/* .the-menu__table_layout {
 	flex-direction: row;
 	width: 100%;
-}
-.the-menu__dish {
+} */
+.the-menu__dish-name {
+	margin: 0;
 	font-size: 16px;
-	display: inline-block;
 	line-height: 20px;
-	margin-right: 50px;
 }
-.the-menu__line {
-	display: inline-block;
-	width: 20px;
-	height: 1px;
-	background-color: #e3e1e1;
-	flex-grow: 1;
-	transform: translateY(10px);
-}
+
 .the-menu__block {
 	display: flex;
 }
@@ -194,14 +193,27 @@ body {
 	font-weight: lighter;
 	color: #b7b7b7;
 	line-height: 20px;
+	width: auto;
 }
-.the-menu__item {
-	width: 425px;
+.the-menu__dish {
+	width: auto;
 }
-.the-menu__price {
-	padding-left:40px;
-	line-height: 20px;
-	vertical-align: top;
+
+.the-menu__price{
+	line-height: 1.3;
+	flex-grow: 1;
+	display: flex;
+	align-items: baseline;
+}
+.the-menu__price::before {
+	content: " ";
+	margin: 10px 10% 0; /*верхний паддинг - половина высоты строки dish-name*/
+	display: block;
+	flex-grow: 1;
+	width: 20px;
+	height: 1px;
+	background-color: #e3e1e1;
+	align-self: flex-start;
 }
 .btn {
 	width: 132px;
@@ -283,6 +295,11 @@ body {
 .gallery__photos {
 	width: 100%;
 	word-wrap: break-word;
+}
+.gallery__photos::after {
+	content: "";
+  display: table;
+  clear: both;
 }
 .gallery__photo {
 	float: left;
