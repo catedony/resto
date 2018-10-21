@@ -1,0 +1,14 @@
+.main-menu {
+	width: 490px;
+	&__list {
+		@include reset-list;
+		@include flex-row(space-between, flex-start);
+	}
+	&__item {
+		@include main-text;
+	}
+	&__link {
+		@include reset-link;
+		text-transform: capitalize;
+	}
+}

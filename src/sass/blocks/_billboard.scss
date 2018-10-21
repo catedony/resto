@@ -1,0 +1,40 @@
+.billboard {
+	@include opposite-colors;
+	@include flex-column(center, center);
+	flex-shrink: 0;
+	margin-top: 110px;
+	height: 575px;
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 60pt;
+	background-image: url("../img/billboard.jpg");
+	background-size: 100% 575px;
+
+	&__slogan {
+		font-family: $decor-font;
+		font-size: 100px;
+		letter-spacing: -0.09em;
+		text-transform: capitalize;
+		text-shadow: 2px 2px 2px rgb(15, 15, 15);
+	}
+	&__annotation {
+		font-size: $regular-text-size;
+		color: $base-bg-color;
+		text-shadow: 2px 2px 2px rgb(15, 15, 15);
+	}
+	&__annotation::before,
+	&__annotation::after {
+		content: "";
+		display: inline-block;
+		width: 40px;
+		height: 1px;
+		background: $base-bg-color;
+		text-shadow: 2px 2px 2px rgb(15, 15, 15);
+	}
+	&__annotation::before {
+		transform: translate(-25px, -4px);
+	}
+	&__annotation::after {
+		transform: translate(25px, -4px);
+	}
+}

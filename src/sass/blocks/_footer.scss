@@ -1,0 +1,29 @@
+.footer {
+	@include opposite-colors;
+	@include flex-row(space-between, center);
+	min-height: 315px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 $side-padding;
+
+	&__block {
+		min-width: 230px;
+		text-align: left;
+		letter-spacing: 0.05em;
+		font-family: $light-font;
+	}
+	&__block:not(:last-child) div:first-child,
+	&__block:not(:last-child) div:last-child {
+		font-family: $base-font;
+	}
+
+	&__link {
+		@include reset-link;
+		letter-spacing: inherit;
+		font-weight: bold;
+	}
+	
+	&__small-text {
+		font-size: $smaller-text-size;
+	}
+}

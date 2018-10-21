@@ -1,0 +1,12 @@
+.footer-menu{
+	&__list {
+		@include reset-list;
+		font-family: $base-font;
+	}
+	&__link {
+		@include reset-link;
+		line-height: 35px;
+		letter-spacing: inherit;
+	}
+}
+

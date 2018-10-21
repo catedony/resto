@@ -1,0 +1,41 @@
+.featured-dishes {
+	@include section-gap;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 $side-padding;
+
+	&__title {
+		@include section-title(uppercase);
+	}
+	&__title::after {
+		@include title-line;
+	}
+
+	
+&__slider {
+	width: 100%;
+}
+&__list {
+	@include flex-row(space-between, center);
+	@include reset-list;
+}
+
+&__item {
+	@include flex-row(space-between, flex-end);
+	width: 230px;
+	min-height: 265px;
+	flex-wrap: wrap;
+	font-size: $smaller-text-size;
+	line-height: 15px;
+}
+&__photo {
+	align-self: flex-start;
+}
+
+&__rating {
+	width: 100%;
+}
+}
+
+
+
